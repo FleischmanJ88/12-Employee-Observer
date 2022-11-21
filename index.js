@@ -58,7 +58,7 @@ async function loadQ() {
 
 async function addEmployee() {
     const roleChoice = await theOffice.getRoles()
-    const employeeChoice = await theOffice.getEmployees()
+    const employChoice = await theOffice.getEmployees()
     inquirer
         .prompt([
             {
@@ -74,14 +74,14 @@ async function addEmployee() {
             {
                 type: "list",
                 name: "roleid",
-                message: "What is the employee's role?", //list
+                message: "What is the employee's role?",
                 choices: roleChoice
             },
             {
                 type: "list",
                 name: "managerid",
                 message: "Who is the manager assigned?",
-                choices: employeeChoice
+                choices: employChoice
             },
         ]).then(async (data) => {
             await theOffice.addEmplpy(data.firstname, data.lastname, data.roleid, data.managerid)
@@ -92,18 +92,18 @@ async function addEmployee() {
 
 async function updateEmpRole() {
     const roleChoice = await theOffice.getRoles()
-    const employeeChoice = await theOffice.getEmployees()
+    const employChoice = await theOffice.getEmployees()
     inquirer
         .prompt([
             {
                 type: "list",
-                name: "whichEmployee", //list
+                name: "whichEmployee",
                 message: "Which eployees role do you want to update?",
-                choices: employeeChoice
+                choices: employChoice
             },
             {
                 type: "list",
-                name: "updateRole", //list
+                name: "updateRole",
                 message: "What is the employees new role?",
                 choices: roleChoice
             },
