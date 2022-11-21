@@ -1,4 +1,4 @@
-class theOffice {
+class Office {
 
     constructor(connection) {
         this.connection = connection
@@ -80,4 +80,4 @@ class theOffice {
     }
 }
 
-module.exports = theOffice 
+module.exports = Office 
