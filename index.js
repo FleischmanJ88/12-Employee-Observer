@@ -9,10 +9,10 @@ let theOffice
 async function init() {
     let newConnection = await connection
     theOffice = new Office(newConnection)
-    loadQ()
+    loadTables()
 }
 
-async function loadQ() {
+async function loadTables() {
     inquirer
         .prompt([
             {
@@ -26,7 +26,7 @@ async function loadQ() {
             switch (data.action) {
                 case "View All Employees":
                     await theOffice.viewEmploy()
-                    loadQ()
+                    loadTables()
                     break
                 case "Add Employee":
                     addEmployee()
@@ -36,14 +36,14 @@ async function loadQ() {
                     break
                 case "View All Roles":
                    await theOffice.viewRoles()
-                    loadQ()
+                   loadTables()
                     break
                 case "Add Role":
                     addRole()
                     break
                 case "View All Departments":
                    await theOffice.viewDept()
-                    loadQ()
+                   loadTables()
                     break
                 case "Add Department":
                     addDepartment()
@@ -85,7 +85,7 @@ async function addEmployee() {
         ]).then(async (data) => {
             await theOffice.addEmplpy(data.firstname, data.lastname, data.roleid, data.managerid)
             console.log("new employee created ")
-            loadQ()
+            loadTables()
         })
 }
 
@@ -109,7 +109,7 @@ async function updateEmpRole() {
         ]).then(async (data) => {
            await theOffice.updateRole(data.whichEmployee, data.updateRole)
             console.log("role updated")
-            loadQ()
+            loadTables()
         })
 }
 
@@ -136,7 +136,7 @@ async function addRole() {
         ]).then(async (data) => {
            await theOffice.addRole(data.title, data.salary, data.department_id)
             console.log("new role created ")
-            loadQ()
+            loadTables()
         })
 }
 
@@ -151,7 +151,7 @@ async function addDepartment() {
         ]).then(async (data) => {
             await theOffice.addDept(data.department_name)
             console.log("new dept created ")
-            loadQ()
+            loadTables()
         })
 }
 
