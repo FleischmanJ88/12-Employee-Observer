@@ -1,7 +1,6 @@
 const mysql = require('mysql2');
 const inquirer = require("inquirer")
 const console_table = require("console.table");
-
 const Office = require("./db/index.js");
 const connection = require("./db/connections");
 
@@ -25,25 +24,25 @@ async function loadQ() {
             },
         ]).then(async (data) => {
             switch (data.action) {
-                case "View all employees":
+                case "View All Employees":
                     await theOffice.viewEmploy()
                     loadQ()
                     break
-                case "Add employee":
+                case "Add Employee":
                     addEmployee()
                     break
                 case "Update Employee Role":
                     updateEmpRole()
                     break
                 case "View All Roles":
-                    await theOffice.viewRoles()
+                   await theOffice.viewRoles()
                     loadQ()
                     break
                 case "Add Role":
                     addRole()
                     break
                 case "View All Departments":
-                    await theOffice.viewDept()
+                   await theOffice.viewDept()
                     loadQ()
                     break
                 case "Add Department":
@@ -57,30 +56,30 @@ async function loadQ() {
 }
 
 async function addEmployee() {
-    const roleChoice = await theOffice.getRoles()
+    const roletChoice = await theOffice.getRoles()
     const employChoice = await theOffice.getEmployees()
     inquirer
         .prompt([
             {
                 type: "input",
                 name: "firstname",
-                message: "What is the employee's first name?"
+                message: "What is the first name?"
             },
             {
                 type: "input",
                 name: "lastname",
-                message: "What is the employee's last name?"
+                message: "What is the last name?"
             },
             {
                 type: "list",
                 name: "roleid",
-                message: "What is the employee's role?",
+                message: "What is the employees role?", //list
                 choices: roleChoice
             },
             {
                 type: "list",
                 name: "managerid",
-                message: "Who is the manager assigned?",
+                message: "Who is their manager?",
                 choices: employChoice
             },
         ]).then(async (data) => {
@@ -108,9 +107,8 @@ async function updateEmpRole() {
                 choices: roleChoice
             },
         ]).then(async (data) => {
-            await theOffice.updateRole(data.whichEmployee, data.updateRole)
+           await theOffice.updateRole(data.whichEmployee, data.updateRole)
             console.log("role updated")
-
             loadQ()
         })
 }
@@ -136,7 +134,7 @@ async function addRole() {
                 choices: departmentChoice
             },
         ]).then(async (data) => {
-            await theOffice.addRole(data.title, data.salary, data.department_id)
+           await theOffice.addRole(data.title, data.salary, data.department_id)
             console.log("new role created ")
             loadQ()
         })
@@ -150,7 +148,6 @@ async function addDepartment() {
                 name: "department_name",
                 message: "What is the  name of the department?"
             },
-
         ]).then(async (data) => {
             await theOffice.addDept(data.department_name)
             console.log("new dept created ")
