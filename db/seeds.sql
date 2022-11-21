@@ -14,7 +14,7 @@ VALUES ('CEO',250000,1),
        ('Director of Marketing',160000,3),
        ('Director of Finance',170000,3),
        ('Management of Sales',100000,4),
-       ('Management of Marketing',110000,3),
+       ('Management of Marketing',110000,4),
        ('Management of Finance',120000,4),
        ('Intern of Sales',40000,5);
        ('Intern of Marketing',41000,5);
