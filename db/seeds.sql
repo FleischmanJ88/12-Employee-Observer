@@ -1,4 +1,4 @@
-USE employee_db;
+USE employees_db;
 
 INSERT INTO department (department_name)
 VALUES ('CEO'),
@@ -22,12 +22,13 @@ VALUES ('CEO',250000,1),
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES ('Michael','Scott',1, NULL),
-       ('Dwight','Schrute',2, NULL),
-       ('Jim','Halpert',3, NULL),
-       ('Pam','Beesly',4 NULL),
-       ('Andy','Bernard',5 NULL),
-       ('Angela','Martin',6)
-       ('Kevin','Malone',7)
-       ('Stanley','Hudson',7),
-       ('Creed','Bratton',8),
-       ('Ryan','Howard',9);
+       ('Dwight','Schrute',2, 1),
+       ('Jim','Halpert',3, 2),
+       ('Pam','Beesly',4 2),
+       ('Andy','Bernard',5 2),
+       ('Angela','Martin',6, 3)
+       ('Kevin','Malone',7, 4)
+       ('Stanley','Hudson',8, 5),
+       ('Creed','Bratton',9, 6),
+       ('Ryan','Howard',10, 7),
+       ('Gabe','Lewis',11, 8);
