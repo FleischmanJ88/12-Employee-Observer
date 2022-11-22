@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-const inquirer = require("inquirer")
+const inquirer = require("inquirer");
 const console_table = require("console.table");
 const Office = require("./db/index.js");
 const connection = require("./db/connections");
