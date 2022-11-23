@@ -56,7 +56,7 @@ async function loadTables() {
 }
 
 async function addEmployee() {
-    const roletChoice = await theOffice.getRoles()
+    const roleChoice = await theOffice.getRoles()
     const employChoice = await theOffice.getEmployees()
     inquirer
         .prompt([
@@ -73,7 +73,7 @@ async function addEmployee() {
             {
                 type: "list",
                 name: "roleid",
-                message: "What is the employees role?", //list
+                message: "What is the employees role?",
                 choices: roleChoice
             },
             {
@@ -83,7 +83,7 @@ async function addEmployee() {
                 choices: employChoice
             },
         ]).then(async (data) => {
-            await theOffice.addEmplpy(data.firstname, data.lastname, data.roleid, data.managerid)
+            await theOffice.addEmploy(data.firstname, data.lastname, data.roleid, data.managerid)
             console.log("new employee created ")
             loadTables()
         })

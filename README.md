@@ -35,7 +35,7 @@ https://github.com/FleischmanJ88/12-Employee-Observer
 
 ### <strong>Screenshot / Video</strong>
 
-
+![Alt text](gif/Untitled_%20Nov%2022,%202022%2010_19%20PM.gif)
 
 ### <strong>Contact Information</strong>
 

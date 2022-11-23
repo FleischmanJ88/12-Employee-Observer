@@ -8,7 +8,7 @@ VALUES ('CEO'),
        ('Intern');
 
 INSERT INTO employee_role (title, salary, department_id)
-VALUES ('CEO', 250000.00,1),
+VALUES ('CEO', 250000.00, 1),
        ('President', 200000.00, 2),
        ('Director of Sales', 150000.00, 3),
        ('Director of Marketing', 160000.00, 3),
